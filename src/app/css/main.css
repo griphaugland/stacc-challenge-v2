@@ -1,0 +1,172 @@
+.pattern-top {
+  object-fit: cover;
+  min-height: 150px;
+  max-height: 400px;
+}
+.pattern-bottom {
+  object-fit: cover;
+  min-width: 1/6;
+}
+.arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 40px;
+  border: 2px solid black;
+}
+#impulsknappen {
+  transition: 0.3s;
+}
+
+#impulsknappen:active {
+  transform: scale(1.15);
+}
+button:active,
+button:hover {
+  transform: scale(0.98);
+}
+
+#click {
+  min-height: 42px;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.numAni {
+  animation: ani 0.7s linear;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+#toBeCharged {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  min-height: 50px;
+}
+
+.arrow {
+  transition: 0.2s;
+}
+.arrow:hover {
+  transform: scale(1.05);
+}
+.account-card {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.popUp {
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+.account-change-container {
+  flex-direction: column;
+  margin-top: 150px;
+  background-color: white;
+  border-radius: 20px;
+  min-height: 350px;
+  width: 90%;
+}
+.saving-target {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  -moz-appearance: textfield;
+  text-align: center;
+}
+.saving-target-button {
+  margin-top: 1rem;
+  background-color: black !important;
+  color: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 2.3rem;
+  padding-inline: 0.3rem;
+  align-self: center;
+}
+.popUpClose {
+  display: none;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  max-width: 150px;
+  min-width: 80px;
+  height: 40px;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+#saving-target-lock {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.endre {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  width: 150px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+b {
+  font-size: clamp(24px, 1vw, 28px);
+}
+.counter-input {
+  font-size: 2rem;
+  width: fit-content;
+  -moz-appearance: textfield;
+  text-align: center;
+  max-width: 8rem;
+}
+.counter-btn {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+}
+.return {
+  align-self: flex-start;
+  padding: 1rem;
+}

@@ -1,4 +1,4 @@
-import Access from './components/Access'
+import Header from '../components/Header'
 import { Bowlby_One_SC, Share_Tech_Mono  } from 'next/font/google'
 export const bodyFont = Share_Tech_Mono({
   weight: '400',
@@ -13,7 +13,7 @@ export const displayFont = Bowlby_One_SC({
 export default function Landing() {
   return (
     <>
-    <Access/>
+    <Header/>
     </>
   )
 }
