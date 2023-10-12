@@ -1,11 +1,14 @@
 import React, { useState, ChangeEvent, useRef, useEffect } from 'react';
-import Access from './components/Access'
+import Header from '../components/Header'
+import Main from '../components/Main'
+
 
 export default function Landing() {
 
   return (
     <>
-    <Access/>
+    <Header/>
+    <Main/>
     </>
   )
 }

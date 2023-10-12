@@ -1,14 +1,11 @@
+"use client";
 import React, { useEffect } from 'react'
-import patternTop from '../design/pattern-top.svg'
 import Validate from './Validate'
 import { Bowlby_One, Share_Tech_Mono } from 'next/font/google';
 const shareTechMono = Share_Tech_Mono({ weight: "400", subsets: ['latin'] });
-const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
 
 const Header = () => {
-  useEffect(() => {
-    Validate();
-  }  , []);
+  Validate();
   return (
     <>
     <header className={`flex flex-col items-center justify-center ${shareTechMono.className}`}>
