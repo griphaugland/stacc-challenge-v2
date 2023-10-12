@@ -9,6 +9,7 @@ let additionalClassNames = 'box-border h-screen w-full flex flex-col justify-cen
 const Access = () => {
 
   useEffect(() => {
+    document.title = 'Manage Account';
     Validate()
   }, []);
 

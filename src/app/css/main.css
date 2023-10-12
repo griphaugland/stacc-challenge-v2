@@ -1,3 +1,6 @@
+.mainLogo {
+  font-size: clamp(28px, 1vw, 36px);
+}
 .pattern-top {
   object-fit: cover;
   min-height: 150px;
@@ -76,17 +79,6 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
-.popUp {
-  top: 0;
-  z-index: 99;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-}
 .account-change-container {
   flex-direction: column;
   margin-top: 150px;
@@ -112,19 +104,6 @@ button:hover {
   padding-inline: 0.3rem;
   align-self: center;
 }
-.popUpClose {
-  display: none;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
-  max-width: 150px;
-  min-width: 80px;
-  height: 40px;
-  align-self: center;
-  margin-bottom: 1rem;
-}
 .button-container {
   display: flex;
   gap: 1rem;
@@ -137,17 +116,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-}
-.endre {
-  background-color: black;
-  color: white;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
-  width: 150px;
-  height: 40px;
-  margin-bottom: 1rem;
 }
 b {
   font-size: clamp(24px, 1vw, 28px);

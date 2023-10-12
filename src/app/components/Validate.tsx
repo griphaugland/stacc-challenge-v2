@@ -1,5 +1,4 @@
 const Validate = () => {
-  console.log(window.location.pathname)
   if(!localStorage.getItem('account')) {
     if(window.location.pathname === '/'){
       return;
