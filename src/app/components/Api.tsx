@@ -1,3 +1,4 @@
+/* import api_key from "../../../next-env"; */
 
 
 export default async function getProducts(input: string) {
@@ -12,3 +13,4 @@ export default async function getProducts(input: string) {
 const products = await res.json();
 return products
 }
+  
