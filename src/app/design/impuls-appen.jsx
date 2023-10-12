@@ -1,6 +1,6 @@
 import React from 'react'
 
-const impulsknappen = () => {
+const Impulsappen = () => {
   return (
     <svg width="234" height="256" viewBox="0 0 234 256" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_2_1507)">
@@ -26,4 +26,4 @@ const impulsknappen = () => {
   )
 }
 
-export default impulsknappen
+export default Impulsappen

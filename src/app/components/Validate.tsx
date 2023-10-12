@@ -1,3 +1,4 @@
+"use client";
 const Validate = () => {
   if(!localStorage.getItem('account')) {
     if(window.location.pathname === '/'){
@@ -6,10 +7,10 @@ const Validate = () => {
       window.location.href = '/';}
   }
    else {
-    if(window.location.pathname === '/impulsknappen'){
+    if(window.location.pathname === '/impuls-appen'){
       return;}
     else{
-      window.location.href = '/impulsknappen';
+      window.location.href = '/impuls-appen';
       }
   }
 };

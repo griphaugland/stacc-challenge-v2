@@ -7,9 +7,8 @@ const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
 let additionalClassNames = 'box-border h-screen w-full flex flex-col justify-center items-center';
 
 const Access = () => {
-
+  Validate();
   const formRef = useRef<HTMLFormElement>(null);
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const accountName = document.querySelector<HTMLInputElement>('#access__container__form__input-account-name');
@@ -20,7 +19,7 @@ const Access = () => {
     let stringified = JSON.stringify(data);
     if (accountName) {
       localStorage.setItem('account', stringified);
-      window.location.href = '/impulsknappen';
+      window.location.href = '/impuls-appen';
     }
   };
 

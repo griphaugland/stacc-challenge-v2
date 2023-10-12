@@ -12,6 +12,7 @@ const Main = () => {
         <Titlesection/>
         <Buttonsection/>
         <Valuesection/>
+        <Explanation/>
     </main>
   )
 }
