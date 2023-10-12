@@ -5,7 +5,9 @@ import { Bowlby_One, Share_Tech_Mono } from 'next/font/google';
 const shareTechMono = Share_Tech_Mono({ weight: "400", subsets: ['latin'] });
 
 const Header = () => {
-  Validate();
+  useEffect(() => {
+    Validate();
+  }, []);
   return (
     <>
     <header className={`flex flex-col items-center justify-center ${shareTechMono.className}`}>

@@ -7,7 +7,9 @@ const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
 let additionalClassNames = 'box-border h-screen w-full flex flex-col justify-center items-center';
 
 const Access = () => {
-  Validate();
+  useEffect(() => {
+    Validate();
+  }, []);
   const formRef = useRef<HTMLFormElement>(null);
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
