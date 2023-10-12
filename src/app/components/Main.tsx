@@ -8,7 +8,7 @@ const shareTechMono = Share_Tech_Mono({ weight: "400", subsets: ['latin'] });
 
 const Main = () => {
   return (
-    <main className={`flex gap-8 flex-col ${shareTechMono.className}`}>
+    <main className={`flex flex-col ${shareTechMono.className}`}>
         <Titlesection/>
         <Buttonsection/>
         <Valuesection/>

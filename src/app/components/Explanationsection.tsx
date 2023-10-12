@@ -2,7 +2,7 @@ import React from 'react'
 
 const Explanation = () => {
   return (
-    <section className="bottom flex flex-row mt-16">
+    <section className="bottom flex flex-row">
     <div className="w-1/3 min-h-screen">
         <img
             className="pattern-bottom"
@@ -10,7 +10,7 @@ const Explanation = () => {
             src="./design/svg/pattern-long.svg"
         />
     </div>
-    <div className="w-2/3 content-bottom gap-6 flex flex-col items-start pr-6">
+    <div className="w-2/3 content-bottom gap-6 flex flex-col items-start">
         <h3 className="font-display w-full text-m">FORKLARING</h3>
         <p className="text-s">
             Kjenner du at du sliter med å spare penger fordi det er så mye fett
@@ -38,7 +38,7 @@ const Explanation = () => {
                 </div>
             </div>
             <div
-                className="button-container w-100 flex align-center justify-center gap-7 mt-5"
+                className="button-container w-100 flex align-center justify-center gap-7"
             >
                 <button className="endre">Endre</button>
     </div>
