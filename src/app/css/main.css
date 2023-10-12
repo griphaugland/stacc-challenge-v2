@@ -5,7 +5,6 @@
 }
 .pattern-bottom {
   object-fit: cover;
-  min-width: 1/6;
 }
 .arrow {
   width: 52px;
@@ -81,7 +80,7 @@ button:hover {
   top: 0;
   z-index: 99;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   position: fixed;
   height: 100%;
