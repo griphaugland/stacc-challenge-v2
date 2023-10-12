@@ -13,7 +13,7 @@ const Valuesection = () => {
             id="arrowDown"
             className="arrow arrowdown flex items-center justify-center"
         >
-            <Arrowdown/>
+        {/*     <Arrowdown/> */}
         </button>
         <div className="button-container flex flex-col">
             <div className="flex flex-row items-center justify-around">
@@ -26,7 +26,7 @@ const Valuesection = () => {
             id="arrowUp"
             className="arrow arrowup flex items-center justify-center"
         >
-            <Arrowup/>
+         {/*    <Arrowup/> */}
         </button>
     </div>
     <p id="toBeCharged" className=""></p>
