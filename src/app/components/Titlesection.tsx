@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Bowlby_One, Inter } from 'next/font/google';
 import productRender from './productRender';
 import getProducts from './Api';
+import { timeEnd } from 'console';
 
 const bowlbyOne = Bowlby_One({ weight: '400', subsets: ['latin'] });
 const inter = Inter({ weight: '400', subsets: ['latin'] });
@@ -12,32 +13,72 @@ const Titlesection = () => {
   const [value, setValue] = useState('');
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    if (value.length >= 3) {
-      getProducts(value)
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching products:', error);
-        });
-    }
-  }, [value]);
-
   const root = useRef<HTMLDivElement>(null);
 
+  function displayLoader() {
+    const loader = document.querySelector('.loader');
+    if (loader) {
+      loader.classList.add('show');
+    }
+  }
+  function hideLoader() {
+    const loader = document.querySelector('.loader');
+    if (loader) {
+      loader.classList.remove('show');
+    }
+  }
   useEffect(() => {
     if (root.current) {
       productRender({ data: products }, root.current);
     }
   }, [products]);
 
+  useEffect(() => {
+    let typingTimer: ReturnType<typeof setTimeout>;
+
+    const handleKeyUp = () => {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(() => {
+        if (search.current && search.current.value.length >= 3) {
+          displayLoader();
+          getProducts(search.current.value)
+            .then((response) => {
+              setProducts(response.data);
+              hideLoader();
+            })
+            .catch((error) => {
+              hideLoader();
+              console.error('Error fetching products:', error);
+            });
+        }
+      }, 1000);
+    };
+
+    if (search.current) {
+      search.current.addEventListener('keyup', handleKeyUp);
+    }
+
+    return () => {
+      if (search.current) {
+        search.current.removeEventListener('keyup', handleKeyUp);
+      }
+      hideLoader();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (value.length === 0) {
+      setProducts([]);
+    }
+    hideLoader();
+  }, [value]);
+
   const handleChange = () => {
     if (search.current) {
       setValue(search.current.value);
     }
   };
-
+    
   return (
     <section className="title-section w-100 flex justify-center">
       <div className="top-container">
@@ -56,6 +97,10 @@ const Titlesection = () => {
               placeholder="Søk på det som frister..."
               onChange={handleChange}
             />
+            <div  className='loader'>
+              <div className="dot dot1"></div>
+              <div className="dot dot2"></div>
+            </div>
           </div>
           <div className="" ref={root} id="products"></div>
         </div>
