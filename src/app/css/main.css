@@ -1,0 +1,379 @@
+.mainLogo {
+  font-size: clamp(28px, 1vw, 36px);
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .mainLogo {
+    font-size: clamp(20px, 1vw, 28px);
+  }
+  .text-container .text-s {
+    font-size: clamp(12px, 1vw, 24px);
+  }
+  .top-text {
+    font-size: clamp(12px, 1vw, 20px);
+  }
+}
+
+.arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 40px;
+  border: 2px solid black;
+}
+#impuls-appen {
+  transition: 0.3s;
+}
+
+#impuls-appen:active {
+  transform: scale(1.02);
+}
+button:active,
+button:hover {
+  transform: scale(0.99);
+}
+#products button:active,
+#products button:hover {
+  transform: none;
+}
+
+#click {
+  min-height: 42px;
+  display: flex;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.numAni {
+  animation: ani 0.7s linear;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+#toBeCharged {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 70%;
+  min-height: 50px;
+}
+
+.arrow {
+  transition: 0.2s;
+}
+.arrow:hover {
+  transform: scale(1.05);
+}
+.account-card {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.account-change-container {
+  flex-direction: column;
+  margin-top: 150px;
+  background-color: white;
+  border-radius: 20px;
+  min-height: 350px;
+  width: 90%;
+}
+.saving-target {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  -moz-appearance: textfield;
+  text-align: center;
+}
+.saving-target-button {
+  margin-top: 1rem;
+  background-color: black !important;
+  color: rgb(255, 255, 255);
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 2.3rem;
+  padding-inline: 0.3rem;
+  align-self: center;
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+#saving-target-lock {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+b {
+  font-size: clamp(24px, 1vw, 28px);
+}
+.counter-input {
+  font-size: 2rem;
+  width: fit-content;
+  -moz-appearance: textfield;
+  text-align: center;
+  max-width: 8rem;
+}
+.counter-btn {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+}
+.return {
+  align-self: flex-start;
+  padding: 1rem;
+}
+#search {
+  width: 100%;
+  margin-block: 1rem;
+  padding: 0.6rem;
+  border: 2px solid rgba(146, 146, 146, 0.585);
+  font-size: 1rem;
+  border-radius: 5px;
+}
+input:focus {
+  border: 2px solid black;
+  outline: none;
+}
+section:nth-of-type(1) {
+  margin-top: 2rem;
+}
+section:last-of-type {
+  margin-bottom: 4rem;
+}
+main {
+  gap: 3rem;
+}
+.product-container {
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 3;
+  background-color: white;
+  border: 2px solid rgba(146, 146, 146, 0.585);
+  border-bottom: none;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 150px;
+  width: 100%;
+  max-width: 500px;
+}
+.product-container:last-child {
+  border-bottom: 2px solid rgba(146, 146, 146, 0.585);
+}
+.product-container:nth-of-type(1) {
+  border-top: none;
+}
+.product-container:hover {
+  background-color: rgb(248, 248, 248);
+}
+#products {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: -1rem;
+  background-color: white;
+  z-index: 2;
+  width: 100%;
+  left: 0;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.top-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+.input-container__wrapper,
+.input-container__input {
+  width: 100%;
+}
+.product-container__name {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.product-container__price {
+  position: absolute;
+  margin-top: auto;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 900;
+  bottom: 0;
+}
+.product-container__img {
+  width: 100%;
+  height: 100%;
+  max-height: 150px;
+  max-width: 100px;
+}
+.product-container__image_container img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.product-container__image_container {
+  height: 120px;
+  width: 100px;
+  margin-left: auto;
+  margin-top: auto;
+}
+@media screen and (max-width: 500px) {
+  .top-container {
+    width: 100%;
+  }
+  .product-container {
+    width: 100%;
+  }
+  section:last-of-type div {
+    width: 90%;
+  }
+}
+.input-container__input {
+  position: relative;
+}
+.validate-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  gap: 0.5rem;
+  animation: loader 2s linear infinite;
+}
+.validate-loader .dot {
+  height: 13px;
+  width: 7px;
+}
+.loader {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 30%;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  gap: 0.5rem;
+  animation: loader 2s linear infinite;
+}
+.dot {
+  width: 3px;
+  height: 6px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 100%;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.show {
+  display: flex;
+}
+.hide {
+  display: none;
+}
+.validate-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.validate-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.info-icon {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 5;
+  background-image: url("../design/icons8-info-50.png");
+  background-position: center;
+  background-size: contain;
+}
+.popUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 4;
+  transition: 0.3s;
+}
+.title-section {
+  padding: 1rem;
+}
+.middle-top {
+  padding-block: 5rem;
+  gap: 4rem;
+}
+.bottom {
+  min-height: 400px;
+  font-size: 1.3rem;
+}
+.bottom p {
+  font-size: 1rem;
+}
+
+path {
+  fill: rgb(0, 0, 0);
+}
+#productImage {
+  align-self: center;
+  justify-self: center;
+  height: auto;
+  max-height: 400px;
+  max-width: 200px;
+}
+#impulsappen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#impulsappen:hover {
+  filter: opacity(0.8);
+}
