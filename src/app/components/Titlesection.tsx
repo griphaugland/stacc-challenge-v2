@@ -1,12 +1,13 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react';
-import { Bowlby_One, Inter } from 'next/font/google';
+import { Bowlby_One, Roboto } from 'next/font/google';
 import productRender from './productRender';
 import getProducts from './Api';
 import { timeEnd } from 'console';
+import Impulsappenlogo from '../design/impulsappenlogo'
 
 const bowlbyOne = Bowlby_One({ weight: '400', subsets: ['latin'] });
-const inter = Inter({ weight: '400', subsets: ['latin'] });
+const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 const Titlesection = () => {
   const search = useRef<HTMLInputElement>(null);
@@ -83,16 +84,15 @@ const Titlesection = () => {
     <section className="title-section w-100 flex justify-center">
       <div className="top-container">
         <div className="text-container">
-          <h5 className="text-s">Eksempelbanken presenter</h5>
-          <h1 className={`mainLogo ${bowlbyOne.className}`}>IMPULS-APPEN</h1>
+          <h1 className={`mainLogo ${bowlbyOne.className}`}><Impulsappenlogo/></h1>
+
         </div>
-        <div className="top-text text-center text-xs">En krone her, en krone der</div>
         <div className="input-container__wrapper">
           <div className="input-container__input">
             <input
               type="text"
               ref={search}
-              className={`${inter.className}`}
+              className={`${roboto.className}`}
               id="search"
               placeholder="Søk på det som frister..."
               onChange={handleChange}

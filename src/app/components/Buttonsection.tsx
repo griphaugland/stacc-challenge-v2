@@ -3,6 +3,10 @@ import React, { useRef, useEffect } from 'react';
 import Impulsappen from '../design/impuls-appen';
 import getProducts from '../components/Api'
 
+interface AccountInfo {
+  lockTime: string;
+  accountName: string;
+}
 
 interface Product {
   name: string;
@@ -24,10 +28,18 @@ export function mainProduct(): Product | null {
   return null;
 }
 
+export function getAccountDetails(): AccountInfo | null {
+  const accountDetails = localStorage.getItem('account');
+  if (accountDetails) {
+    return JSON.parse(accountDetails);
+  }
+  return null;
+}
 
 const Buttonsection = () => {
   const productImageRef = useRef<HTMLImageElement>(null);
   const parsedMain = mainProduct();
+  const parsedAccount = getAccountDetails();
 
   useEffect(() => {
     if (productImageRef.current && parsedMain) {
@@ -45,17 +57,23 @@ const Buttonsection = () => {
       const posX = Math.random() * window.innerWidth;
       const posY = Math.random() * window.innerHeight;
       countBox.style.position = 'absolute';
-      countBox.style.fontSize = `${Math.random() * 10 + 2}rem`;
+      countBox.style.fontSize = `${2}rem`;
       countBox.style.transform = `translate(${posX}px, ${posY}px)`;
     }
   };
 
   return (
-    <section className="middle-top h-full flex justify-center relative items-center">
-      <button className="impulsappen" ref={clickBtnRef} onClick={countClicks} id="impulsappen">
-        <img id='productImage' ref={productImageRef} />
-      </button>
-    </section>
+    <div className="button-container flex flex-col">
+      <div className={`text-container__text`}>
+        <h2 className="productName">{parsedMain?.name}</h2>
+      </div>
+      <section className="middle-top h-full flex justify-center flex-col relative items-center">
+        <button className="impulsappen" ref={clickBtnRef} onClick={countClicks} id="impulsappen">
+          <img id='productImage' ref={productImageRef} />
+          <h2 className="productPrice">{parsedMain?.current_price ? parsedMain?.current_price + "kr" : ""}</h2>
+        </button>
+      </section>
+    </div>
   );
 };
 

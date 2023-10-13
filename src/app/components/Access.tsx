@@ -1,10 +1,14 @@
 import React, { useState, ChangeEvent, useRef, useEffect } from 'react';
-import { Bowlby_One, Share_Tech_Mono } from 'next/font/google';
-const shareTechMono = Share_Tech_Mono({ weight: "400", subsets: ['latin'] });
+import { Bowlby_One, Roboto} from 'next/font/google';
 const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
+const roboto = Roboto({ weight: "400", subsets: ['latin'] });
 let additionalClassNames = 'box-border h-screen w-full flex flex-col justify-center items-center';
 
 const Access = () => {
+  if(localStorage.getItem('account')) {
+    window.location.href = '/';
+  }
+
   const formRef = useRef<HTMLFormElement>(null);
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,10 +46,10 @@ const Access = () => {
   };
 
   return (
-    <div className={`${additionalClassNames} ${shareTechMono.className}`}>
+    <div className={`${additionalClassNames} ${roboto.className}`}>
       <div className="access__container p-4">
         <div className="access__container__title">
-          <h1>Sett opp</h1><b className={bowlbyOne.className}>IMPULSKNAPPEN</b>
+          <h1 className="access__container__title-text">Sett opp</h1><b className={`${bowlbyOne.className} access__container__title-b`}>IMPULSAPPEN</b>
         </div>
         <form ref={formRef} className="access__container__form gap-2 grid mt-6" onSubmit={handleFormSubmit}>
           <label className='col' htmlFor="access__container__form__input-lock-time">Hvor lenge skal pengene dine låses?(antall mnd)</label>
@@ -69,7 +73,7 @@ const Access = () => {
             }}>+</button>
           </div>
           <label className='col' htmlFor="access__container__form__input-account-name">Hva skal impulssparepengene dine gå til?</label>
-          <input className='col saving-target' type="text" id="access__container__form__input-account-name" />
+          <input className='col saving-target' type="text" maxLength={20} id="access__container__form__input-account-name" />
           <button className='col saving-target-button' type="submit">Lag konto</button>
         </form>
       </div>
