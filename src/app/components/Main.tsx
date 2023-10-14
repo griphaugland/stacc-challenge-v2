@@ -1,7 +1,6 @@
 import React from 'react'
 import Buttonsection from './Buttonsection'
 import Valuesection from './Valuesection'
-import Explanation from './Explanationsection'
 import Titlesection from './Titlesection'
 import ExplanationPopup from './ExplanationPopup'
 import {Roboto } from 'next/font/google';

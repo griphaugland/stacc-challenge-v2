@@ -1,17 +1,22 @@
 "use client";
-import React, { useEffect, useRef} from 'react'
-import Validate from './Validate'
-import { Roboto} from 'next/font/google';
-const roboto = Roboto({ weight: "400", subsets: ['latin'] });
+import React, { useEffect } from 'react';
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 const Header = () => {
-  if(!localStorage.getItem('account')) {
-    window.location.href = '/';
-  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !localStorage.getItem('account')) {
+      window.location.href = '/';
+    }
+  }, []);
 
   function startOver() {
-    localStorage.clear();
-    window.location.href = '/';
+    if (typeof window !== 'undefined') {
+      localStorage.clear();
+      window.location.href = '/';
+    }
   }
   return (
     <>

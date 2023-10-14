@@ -1,10 +1,11 @@
 "use client";
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { Bowlby_One} from 'next/font/google';
 import React from 'react'
 const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
 
 const Validate = () => {
+  useEffect(() => {
  if(!localStorage.getItem('account')) {
       setTimeout(() => {
         window.location.href = '/access';
@@ -15,6 +16,7 @@ const Validate = () => {
        window.location.href = '/impuls-appen';
       }, 2000);
   }
+}, []);
 
 
   return (

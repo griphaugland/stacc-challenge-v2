@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, ChangeEvent, useRef, useEffect } from 'react';
 import { Bowlby_One, Roboto} from 'next/font/google';
 const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
@@ -5,9 +6,11 @@ const roboto = Roboto({ weight: "400", subsets: ['latin'] });
 let additionalClassNames = 'box-border h-screen w-full flex flex-col justify-center items-center';
 
 const Access = () => {
+  useEffect(() => {
   if(localStorage.getItem('account')) {
     window.location.href = '/';
   }
+  }, []);
 
   const formRef = useRef<HTMLFormElement>(null);
   const handleFormSubmit = (e: React.FormEvent) => {

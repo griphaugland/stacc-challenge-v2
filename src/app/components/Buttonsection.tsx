@@ -19,19 +19,22 @@ interface Product {
 interface ProductData {
   data: Product[];
 }
-
 export function mainProduct(): Product | null {
-  const mainProduct = localStorage.getItem('product');
-  if (mainProduct) {
-    return JSON.parse(mainProduct);
+  if (typeof window !== 'undefined') {
+    const mainProduct = localStorage.getItem('product');
+    if (mainProduct) {
+      return JSON.parse(mainProduct);
+    }
   }
   return null;
 }
 
 export function getAccountDetails(): AccountInfo | null {
-  const accountDetails = localStorage.getItem('account');
-  if (accountDetails) {
-    return JSON.parse(accountDetails);
+  if (typeof window !== 'undefined') {
+    const accountDetails = localStorage.getItem('account');
+    if (accountDetails) {
+      return JSON.parse(accountDetails);
+    }
   }
   return null;
 }
