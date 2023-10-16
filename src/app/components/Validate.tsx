@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Bowlby_One} from 'next/font/google';
 import React from 'react'
 const bowlbyOne = Bowlby_One({ weight: "400", subsets: ['latin'] });
@@ -13,7 +13,7 @@ const Validate = () => {
   }
    else {
     setTimeout(() => {
-       window.location.href = '/impuls-appen';
+       window.location.href = '/impulsappen';
       }, 2000);
   }
 }, []);
@@ -27,7 +27,7 @@ const Validate = () => {
           <div className="dot dot2"></div>
         </div>
       <div className="access__container__title">
-        <b className={bowlbyOne.className}>IMPULSKNAPPEN</b>
+        <b className={bowlbyOne.className}>IMPULSAPPEN</b>
       </div>
     </div>
   </div>

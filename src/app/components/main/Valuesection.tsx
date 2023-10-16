@@ -1,11 +1,18 @@
 "use client";
-import React from 'react'
-import getProducts from './Api'
+import React, { useEffect, useState } from 'react'
+import getProducts from '../Api'
 import { mainProduct, getAccountDetails } from './Buttonsection'
 
+interface AccountInfo {
+  lockTime: string;
+  accountName: string;
+}
+
 const Valuesection = () => {
-  const parsedMain = mainProduct();
-  const accountDetails = getAccountDetails();
+  const [accountDetails, setaccountDetails] = useState<AccountInfo | null>(null);
+  useEffect(() => {
+    setaccountDetails(getAccountDetails());
+  }, []);  
 
   return (
         <section
@@ -17,14 +24,16 @@ const Valuesection = () => {
       <div className={`text-container__text`}>
         <h2 className="left">Låses</h2><h2>{accountDetails?.lockTime} måneder</h2>
       </div>
-                <h3 className="text-center">Du har spart</h3>
+                {/* <h3 className="text-center">Du har spart</h3>
                 <h3 className="text-center" id="countBox">0</h3>
-                <button className='fasttrekk-btn'>
-                  Fast trekk
-                </button>
-                <button className='statistikk-btn'>
-                  Statistikk
-                </button>
+                <div className=''>
+                  <button className='fasttrekk-btn'>
+                    Fast trekk
+                  </button>
+                  <button className='statistikk-btn'>
+                    Statistikk
+                  </button>
+                </div> */}
             </div>
         </section>
   )

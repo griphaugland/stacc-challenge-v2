@@ -1,6 +1,6 @@
 "use client";
 import React, {useRef} from 'react';
-import { mainProduct } from './Buttonsection';
+import { mainProduct } from './main/Buttonsection';
 
 interface Product {
     name: string;

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import Explanation from './Explanationsection'
 import { useRef, useEffect } from 'react'

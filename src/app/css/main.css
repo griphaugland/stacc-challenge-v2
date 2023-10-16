@@ -264,6 +264,10 @@ section:last-of-type {
     width: 90%;
   }
 }
+section:last-of-type div {
+  width: 90%;
+  max-width: 500px;
+}
 .input-container__input {
   position: relative;
 }

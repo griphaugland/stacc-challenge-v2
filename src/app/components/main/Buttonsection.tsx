@@ -1,7 +1,5 @@
 "use client";
 import React, { useRef, useEffect } from 'react';
-import Impulsappen from '../design/impuls-appen';
-import getProducts from '../components/Api'
 
 interface AccountInfo {
   lockTime: string;
@@ -81,4 +79,3 @@ const Buttonsection = () => {
 };
 
 export default Buttonsection;
-

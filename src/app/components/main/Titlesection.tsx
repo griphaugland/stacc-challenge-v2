@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react';
 import { Bowlby_One, Roboto } from 'next/font/google';
-import productRender from './productRender';
-import getProducts from './Api';
+import productRender from '../productRender';
+import getProducts from '../Api';
 import { timeEnd } from 'console';
-import Impulsappenlogo from '../design/impulsappenlogo'
+import Impulsappenlogo from '../../design/impulsappenlogo'
 
 const bowlbyOne = Bowlby_One({ weight: '400', subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
